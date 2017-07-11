@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbUpdatePronia3CalcStatusDetail" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbUpdatePronia3CalcStatusDetail" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Pronia3CalcStatusDetailCollection" type="Pronia3CalcStatusDetailCollection"/>
+   <xs:complexType name="Pronia3CalcStatusDetailCollection">
+      <xs:sequence>
+         <xs:element name="Pronia3CalcStatusDetail" type="Pronia3CalcStatusDetail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Pronia3CalcStatusDetail">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" nillable="true"/>
+         <xs:element name="unit" type="string200" nillable="true"/>
+         <xs:element name="calcPeriod" type="xs:dateTime" nillable="true"/>
+         <xs:element name="calcStartDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="calcEndDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="owbStatus" type="xs:decimal" nillable="true"/>
+         <xs:element name="soaRead" type="string200" minOccurs="0"/>
+         <xs:element name="soaMessages" type="string200" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string200">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="200"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,12 @@
+<adapter-config name="dbPNCalcProniaJob" adapter="db" wsdlLocation="../WSDLs/dbPNCalcProniaJob.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="PNCalcProniaConn" location="eis/DB/pronia3"/>
+  <endpoint-interaction portType="dbPNCalcProniaJob_ptt" operation="dbPNCalcProniaJob">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="ETL_USER"/>
+      <property name="ProcedureName" value="RUN_CALC_PRONIA3_JOB"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

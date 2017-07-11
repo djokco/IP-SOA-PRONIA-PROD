@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+     name="EBSLogFileUtility"
+     targetNamespace="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSLogFileUtility/EBSLogFileUtility"
+     xmlns:tns="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSLogFileUtility/EBSLogFileUtility"
+     xmlns:inp1="http://ebs.indonesiapower.co.id/shema/log"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://ebs.indonesiapower.co.id/shema/log" schemaLocation="http://devapp12c.indonesiapower.corp:8001/soa-infra/services/EBSIntegration/EBSLogFileUtility!1.0/Schemas/Log.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessage">
+        <wsdl:part name="input_msg" element="inp1:input"/>
+    </wsdl:message>
+    <wsdl:message name="replyMessage">
+        <wsdl:part name="output_msg" element="inp1:output"/>
+    </wsdl:message>
+    <wsdl:portType name="writeLog_ptt">
+        <wsdl:operation name="writeLog">
+            <wsdl:input message="tns:requestMessage"/>
+            <wsdl:output message="tns:replyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

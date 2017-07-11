@@ -1,0 +1,22 @@
+<adapter-config name="dbPronia3StatusDetail" adapter="db" wsdlLocation="../WSDLs/dbPronia3StatusDetail.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="PNCalcProniaConn" location="eis/DB/pronia3"/>
+  <endpoint-activation portType="dbPronia3StatusDetail_ptt" operation="receive">
+    <activation-spec className="oracle.tip.adapter.db.DBActivationSpec">
+      <property name="DescriptorName" value="dbPronia3StatusDetail.Pronia3CalcStatusDetail"/>
+      <property name="QueryName" value="dbPronia3StatusDetailSelect"/>
+      <property name="MappingsMetaDataURL" value="dbPronia3StatusDetail-or-mappings.xml"/>
+      <property name="PollingStrategy" value="LogicalDeletePollingStrategy"/>
+      <property name="MarkReadColumn" value="SOA_READ"/>
+      <property name="MarkReadValue" value="C"/>
+      <property name="MarkUnreadValue" value="P"/>
+      <property name="PollingInterval" value="5"/>
+      <property name="MaxRaiseSize" value="1"/>
+      <property name="MaxTransactionSize" value="1"/>
+      <property name="NumberOfThreads" value="1"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="SequencingColumn" value="CALC_END_DATE"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>

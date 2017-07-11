@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_2">CALC_PERIOD</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_PERIOD:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_MESSAGES:db_column_type">VARCHAR2</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_1">UNIT</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_0">ID</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_MESSAGES:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_READ:db_column_type">VARCHAR2</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.UNIT:db_column_type">VARCHAR2</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.OWB_STATUS:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_END_DATE:db_column_scale">6</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.ID:db_column_precision">38</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.ID:db_column_type">NUMBER</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_MESSAGES:db_column_size">1500</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.ID:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.OWB_STATUS:db_column_type">NUMBER</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_table_type">TABLE</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_START_DATE:db_column_scale">6</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_END_DATE:db_column_type">TIMESTAMP</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_START_DATE:db_column_type">TIMESTAMP</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.OWB_STATUS:db_column_scale">0</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_READ:db_column_size">200</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.UNIT:db_column_size">200</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_END_DATE:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.SOA_READ:db_column_not_null">true</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_PERIOD:db_column_type">DATE</entry>
+   <entry key="root_descriptor_alias">PRONIA3_CALC_STATUS_DETAIL</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.UNIT:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.OWB_STATUS:db_column_precision">38</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.ID:db_column_scale">0</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_7">SOA_MESSAGES</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_6">SOA_READ</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_5">OWB_STATUS</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_4">CALC_END_DATE</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL.CALC_START_DATE:db_column_not_null">false</entry>
+   <entry key="PRONIA3_CALC_STATUS_DETAIL:db_column_3">CALC_START_DATE</entry>
+</properties>

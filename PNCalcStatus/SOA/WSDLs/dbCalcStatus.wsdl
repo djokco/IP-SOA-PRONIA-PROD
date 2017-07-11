@@ -1,0 +1,87 @@
+<wsdl:definitions
+     name="dbCalcStatus"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/dbCalcStatus"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/dbCalcStatus"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:pc="http://xmlns.oracle.com/pcbpel/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbCalcStatus"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns1="http://soa.indonesiapower.co.id/schema/calcproniastatus"
+     xmlns:ns2="http://soa.indonesiapower.co.id/schema/fault"
+    >
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="dbCalcStatus_plt" >
+    <plt:role name="dbCalcStatus_role" >
+      <plt:portType name="tns:dbCalcStatus_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbCalcStatus" schemaLocation="../Schemas/dbCalcStatus_table.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://soa.indonesiapower.co.id/schema/calcproniastatus" schemaLocation="../Schemas/calcproniastatus.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://soa.indonesiapower.co.id/schema/fault" schemaLocation="../Schemas/fault.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Pronia3CalcStatusCollection_msg">
+        <wsdl:part name="Pronia3CalcStatusCollection" element="top:Pronia3CalcStatusCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbCalcStatus_ptt">
+        <wsdl:operation name="receive">
+            <wsdl:input message="tns:Pronia3CalcStatusCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

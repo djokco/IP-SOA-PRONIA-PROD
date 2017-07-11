@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="OracleBI_PNCALCInterface"
+     targetNamespace="http://www.ibm.com/maximo/wsdl/OracleBI_PNCALCInterface"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:mxws="http://www.ibm.com/maximo/wsdl/OracleBI_PNCALCInterface"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="OracleBI_PNCALCInterfaceStatus">
+        <plnk:role name="OracleBI_PNCALCInterfacePortType" portType="mxws:OracleBI_PNCALCInterfacePortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://www.ibm.com/maximo/wsdl/OracleBI_PNCALCInterface" location="http://mx76app2.indonesiapower.co.id:9089/meaweb/wsdl/OracleBI_PNCALCInterface.wsdl"/>
+</wsdl:definitions>

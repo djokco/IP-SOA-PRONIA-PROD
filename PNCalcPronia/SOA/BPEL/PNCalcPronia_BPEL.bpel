@@ -1,0 +1,128 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Wed Jan 04 13:00:44 ICT 2017
+  Author:  LahirSa
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="PNCalcPronia_BPEL"
+               targetNamespace="http://xmlns.oracle.com/IPApplication/PNCalcPronia/PNCalcPronia_BPEL"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/IPApplication/PNCalcPronia/PNCalcPronia_BPEL"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://oracle.com/sca/soapservice/IPApplication/PNCalcPronia/PNCalcPronia"
+         xmlns:ns2="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSSendMailNotification/EBSSendMailNotification"
+         xmlns:ns3="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcPronia/dbProcCalcPronia"
+         xmlns:ns4="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSLogFileUtility/EBSLogFileUtility"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:ess="http://xmlns.oracle.com/scheduler"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://soa.indonesiapower.co.id/calcPronia"
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbProcCalcPronia"
+         xmlns:ns7="http://ebs.indonesiapower.co.id/SendMailNotification"
+         xmlns:ns8="http://ebs.indonesiapower.co.id/shema/log" xmlns:ui="http://xmlns.oracle.com/soa/designer">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSSendMailNotification/EBSSendMailNotification"
+          location="../WSDLs/EBSSendMailNotificationWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="dbProcCalcPronia" partnerLinkType="ns3:dbProcCalcPronia_plt"
+                 partnerRole="dbProcCalcPronia_role"/>
+    <partnerLink name="PNCalcPronia" partnerLinkType="ns1:PNCalcPronia" myRole="execute_ptt"/>
+  </partnerLinks>
+  <variables>
+    <variable name="ReceiveInput_execute_InputVariable" messageType="ns1:requestMessage"/>
+    <variable name="ServiceName" type="xsd:string"/>
+    <variable name="StartDateTime" type="xsd:dateTime"/>
+    <variable name="InvokedbProcCalcPronia_dbProcCalcPronia_InputVariable" messageType="ns3:args_in_msg"/>
+    <variable name="InvokeEBSSendMailNotification_execute_InputVariable" messageType="ns2:requestMessage"/>
+    <variable name="InvokeEBSSendMailNotification_execute_OutputVariable" messageType="ns2:replyMessage"/>
+    <variable name="InvokeEBSLogFileUtility_error_writeLog_InputVariable" messageType="ns4:requestMessage"/>
+    <variable name="InvokeEBSLogFileUtility_error_writeLog_OutputVariable" messageType="ns4:replyMessage"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="Sequence1">
+        <sequence name="sendmail_fail">
+          <assign name="Assignsendmailfail">
+            <copy>
+              <from>concat('Nama Service :',"&amp;#13;",concat(ora:getFlowId(),' - ',normalize-space($ServiceName)),"&amp;#13;","&amp;#13;",'Input Request :',"&amp;#13;",normalize-space(ora:toCDATA($ReceiveInput_execute_InputVariable.payload)), "&amp;#13;", "&amp;#13;",'Output Response :',"&amp;#13;",normalize-space(ora:toCDATA('error')), "&amp;#13;", "&amp;#13;",'Fault :',"&amp;#13;",normalize-space(ora:toCDATA(ora:getFaultAsXML())))</from>
+              <to>$InvokeEBSSendMailNotification_execute_InputVariable.payload/ns7:InputString</to>
+            </copy>
+          </assign>
+          <invoke name="InvokeEBSSendMailNotification" partnerLink="EBSSendMailNotification"
+                  portType="ns2:execute_ptt" operation="execute"
+                  inputVariable="InvokeEBSSendMailNotification_execute_InputVariable" bpelx:invokeAsDetail="no"
+                  outputVariable="InvokeEBSSendMailNotification_execute_OutputVariable"/>
+        </sequence>
+        <sequence name="logfile_fail">
+          <assign name="AssignLogFileFail">
+            <copy>
+              <from>$ServiceName</from>
+              <to>$InvokeEBSLogFileUtility_error_writeLog_InputVariable.input_msg/ns8:serviceName</to>
+            </copy>
+            <copy>
+              <from>concat('IP-MW-SOA',' || ',ora:getFlowId(),' || ','Start Process PNCalcPronia --&gt; Request Payload = ',normalize-space(ora:toCDATA($ReceiveInput_execute_InputVariable.payload)),' || ', 'Request PNCalcPronia: ','Payload = ',normalize-space(ora:toCDATA($InvokedbProcCalcPronia_dbProcCalcPronia_InputVariable.InputParameters)),' || ','Response PNCalcPronia: ','Payload = ',normalize-space(ora:toCDATA(ora:getFaultAsXML())),' || ','End Process PNCalcPronia. Total time executed ',round((xp20:seconds-from-dateTime((xp20:current-dateTime()))-xp20:seconds-from-dateTime($StartDateTime))*1000),' millis.')</from>
+              <to>$InvokeEBSLogFileUtility_error_writeLog_InputVariable.input_msg/ns8:message</to>
+            </copy>
+            <copy>
+              <from>'ERROR'</from>
+              <to>$InvokeEBSLogFileUtility_error_writeLog_InputVariable.input_msg/ns8:level</to>
+            </copy>
+          </assign>
+          <invoke name="InvokeEBSLogFileUtility_error" partnerLink="EBSLogFileUtility" portType="ns4:writeLog_ptt"
+                  operation="writeLog" inputVariable="InvokeEBSLogFileUtility_error_writeLog_InputVariable"
+                  outputVariable="InvokeEBSLogFileUtility_error_writeLog_OutputVariable" bpelx:invokeAsDetail="no"/>
+        </sequence>
+        <exit name="Exit"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main">
+    <receive name="ReceiveInput"
+             createInstance="yes" variable="ReceiveInput_execute_InputVariable" partnerLink="PNCalcPronia"
+             portType="ns1:execute_ptt" operation="execute"/>
+    <assign name="ServiceName">
+      <copy>
+        <from>'PNCalcPronia'</from>
+        <to>$ServiceName</to>
+      </copy>
+      <copy>
+        <from>xp20:current-date()</from>
+        <to>$StartDateTime</to>
+      </copy>
+    </assign>
+    <assign name="T_dbProcCalcPronia">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doXSLTransformForDoc("../Transformations/T_dbProcCalcPronia.xsl", $ReceiveInput_execute_InputVariable.payload)</from>
+        <to variable="InvokedbProcCalcPronia_dbProcCalcPronia_InputVariable" part="InputParameters"/>
+      </copy>
+    </assign>
+    <invoke name="InvokedbProcCalcPronia" partnerLink="dbProcCalcPronia"
+            portType="ns3:dbProcCalcPronia_ptt" operation="dbProcCalcPronia"
+            inputVariable="InvokedbProcCalcPronia_dbProcCalcPronia_InputVariable" bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

@@ -1,0 +1,28 @@
+<wsdl:definitions
+     name="UpdateStatusDb"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/UpdateStatusDb"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/UpdateStatusDb"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateStatusDb"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="UpdateStatusDb_plt" >
+    <plt:role name="UpdateStatusDb_role" >
+      <plt:portType name="tns:UpdateStatusDb_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateStatusDb" schemaLocation="../Schemas/UpdateStatusDb_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Pronia3CalcStatusCollection_msg">
+        <wsdl:part name="Pronia3CalcStatusCollection" element="top:Pronia3CalcStatusCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="UpdateStatusDb_ptt">
+        <wsdl:operation name="update">
+            <wsdl:input message="tns:Pronia3CalcStatusCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

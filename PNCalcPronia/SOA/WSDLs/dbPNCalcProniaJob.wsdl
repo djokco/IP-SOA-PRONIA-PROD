@@ -1,0 +1,29 @@
+<wsdl:definitions
+     name="dbPNCalcProniaJob"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcPronia/dbPNCalcProniaJob"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcPronia/dbPNCalcProniaJob"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbPNCalcProniaJob"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="dbPNCalcProniaJob_plt" >
+    <plt:role name="dbPNCalcProniaJob_role" >
+      <plt:portType name="tns:dbPNCalcProniaJob_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+     <schema xmlns="http://www.w3.org/2001/XMLSchema">
+       <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbPNCalcProniaJob"
+               schemaLocation="../Schemas/dbPNCalcProniaJob_sp.xsd" />
+     </schema>
+    </wsdl:types>
+    <wsdl:message name="args_in_msg">
+        <wsdl:part name="InputParameters" element="db:InputParameters"/>
+    </wsdl:message>
+    <wsdl:portType name="dbPNCalcProniaJob_ptt">
+        <wsdl:operation name="dbPNCalcProniaJob">
+            <wsdl:input message="tns:args_in_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

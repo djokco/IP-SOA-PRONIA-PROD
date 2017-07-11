@@ -85,7 +85,7 @@
       </class-mapping-descriptor>
    </class-mapping-descriptors>
    <login xsi:type="database-login">
-      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle10Platform</platform-class>
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
       <connection-url></connection-url>
    </login>
 </object-persistence>

@@ -11,10 +11,10 @@
          <xs:element name="id" type="xs:decimal" nillable="true"/>
          <xs:element name="unit" type="string200" minOccurs="0" nillable="true"/>
          <xs:element name="calcPeriod" type="xs:dateTime" minOccurs="0" nillable="true"/>
-         <xs:element name="etlStartDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="etlStartDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
          <xs:element name="etlEndDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
          <xs:element name="owbStatus" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="status" type="string200" nillable="true"/>
+         <xs:element name="status" type="string200" minOccurs="0" nillable="true"/>
          <xs:element name="soaRead" type="string1" minOccurs="0"/>
          <xs:element name="soaMessages" type="string1500" minOccurs="0" nillable="true"/>
       </xs:sequence>

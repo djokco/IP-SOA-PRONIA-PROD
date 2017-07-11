@@ -1,6 +1,6 @@
 <adapter-config name="dbCalcStatus" adapter="db" wsdlLocation="../WSDLs/dbCalcStatus.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory UIConnectionName="PNCalcProniaConn" location="eis/DB/pronia3"/>
+  <connection-factory UIConnectionName="pronia3" location="eis/DB/pronia3"/>
   <endpoint-activation portType="dbCalcStatus_ptt" operation="receive">
     <activation-spec className="oracle.tip.adapter.db.DBActivationSpec">
       <property name="DescriptorName" value="dbCalcStatus.Pronia3CalcStatus"/>

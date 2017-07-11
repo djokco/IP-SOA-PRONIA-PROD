@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="EBSLogFileUtility">
-        <dgm:body borderWidth="2" arcRad="20" X="646" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="600" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="636" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="590" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="EBSLogFileUtility" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSLogFileUtility/EBSLogFileUtility#wsdl.interface(writeLog_ptt)"/>
@@ -29,11 +29,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="EBSSendMailNotification">
-        <dgm:body borderWidth="2" arcRad="20" X="646" Y="380" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="600" Y="380" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="636" Y="373" width="156" height="98">
+        <dgm:shadow arcRad="20" X="590" Y="373" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="EBSSendMailNotification" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://oracle.com/sca/soapservice/IP-MW-SOA/EBSSendMailNotification/EBSSendMailNotification#wsdl.interface(execute_ptt)"/>
@@ -43,11 +43,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="dbUpdatePronia3CalcStatusDetail">
-        <dgm:body borderWidth="2" arcRad="20" X="646" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="600" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="636" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="590" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="dbUpdatePronia3CalcStatusDetail" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatusDetail/dbUpdatePronia3CalcStatusDetail#wsdl.interface(dbUpdatePronia3CalcStatusDetail_ptt)"/>
@@ -57,11 +57,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="PNCALCInterface">
-        <dgm:body borderWidth="2" arcRad="20" X="646" Y="262" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="600" Y="262" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="636" Y="255" width="156" height="98">
+        <dgm:shadow arcRad="20" X="590" Y="255" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PNCALCInterface" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.ibm.com/maximo/wsdl/OracleBI_PNCALCInterface#wsdl.interface(OracleBI_PNCALCInterfacePortType)"/>
@@ -71,11 +71,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="dbUpdateSuccess">
-        <dgm:body borderWidth="2" arcRad="20" X="646" Y="498" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="600" Y="498" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="636" Y="491" width="156" height="98">
+        <dgm:shadow arcRad="20" X="590" Y="491" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="dbUpdateSuccess" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatusDetail/dbUpdateSuccess#wsdl.interface(dbUpdateSuccess_ptt)"/>
@@ -85,12 +85,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="PNCalcStatusDetail">
-        <dgm:body borderWidth="2" arcRad="20" X="337" Y="223" width="130" height="161">
+        <dgm:body borderWidth="2" arcRad="20" X="314" Y="223" width="130" height="161">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="327" Y="216" width="150" height="177">
+        <dgm:shadow arcRad="20" X="304" Y="216" width="150" height="177">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="dbPronia3StatusDetail" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatusDetail/dbPronia3StatusDetail#wsdl.interface(dbPronia3StatusDetail_ptt)"/>
@@ -102,42 +102,42 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="PNCalcStatusDetail/EBSLogFileUtility" target="EBSLogFileUtility" width="2">
-        <dgm:gSegment X1="477" Y1="248" X2="501" Y2="248"/>
-        <dgm:gSegment X1="501" Y1="248" X2="501" Y2="36"/>
-        <dgm:gSegment X1="501" Y1="36" X2="636" Y2="36"/>
+        <dgm:gSegment X1="454" Y1="248" X2="478" Y2="248"/>
+        <dgm:gSegment X1="478" Y1="248" X2="478" Y2="36"/>
+        <dgm:gSegment X1="478" Y1="36" X2="590" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PNCalcStatusDetail/dbUpdatePronia3CalcStatusDetail" target="dbUpdatePronia3CalcStatusDetail" width="2">
-        <dgm:gSegment X1="477" Y1="273" X2="516" Y2="273"/>
-        <dgm:gSegment X1="516" Y1="273" X2="516" Y2="154"/>
-        <dgm:gSegment X1="516" Y1="154" X2="636" Y2="154"/>
+        <dgm:gSegment X1="454" Y1="273" X2="493" Y2="273"/>
+        <dgm:gSegment X1="493" Y1="273" X2="493" Y2="154"/>
+        <dgm:gSegment X1="493" Y1="154" X2="590" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PNCalcStatusDetail/PNCALCInterface" target="PNCALCInterface" width="2">
-        <dgm:gSegment X1="477" Y1="298" X2="531" Y2="298"/>
-        <dgm:gSegment X1="531" Y1="298" X2="531" Y2="272"/>
-        <dgm:gSegment X1="531" Y1="272" X2="636" Y2="272"/>
+        <dgm:gSegment X1="454" Y1="298" X2="508" Y2="298"/>
+        <dgm:gSegment X1="508" Y1="298" X2="508" Y2="272"/>
+        <dgm:gSegment X1="508" Y1="272" X2="590" Y2="272"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PNCalcStatusDetail/EBSSendMailNotification" target="EBSSendMailNotification" width="2">
-        <dgm:gSegment X1="477" Y1="323" X2="516" Y2="323"/>
-        <dgm:gSegment X1="516" Y1="323" X2="516" Y2="390"/>
-        <dgm:gSegment X1="516" Y1="390" X2="636" Y2="390"/>
+        <dgm:gSegment X1="454" Y1="323" X2="493" Y2="323"/>
+        <dgm:gSegment X1="493" Y1="323" X2="493" Y2="390"/>
+        <dgm:gSegment X1="493" Y1="390" X2="590" Y2="390"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="dbPronia3StatusDetail" target="PNCalcStatusDetail/dbPronia3StatusDetail" width="2">
-        <dgm:gSegment X1="168" Y1="248" X2="327" Y2="248"/>
+        <dgm:gSegment X1="168" Y1="248" X2="304" Y2="248"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PNCalcStatusDetail/dbUpdateSuccess" target="dbUpdateSuccess" width="2">
-        <dgm:gSegment X1="477" Y1="348" X2="501" Y2="348"/>
-        <dgm:gSegment X1="501" Y1="348" X2="501" Y2="508"/>
-        <dgm:gSegment X1="501" Y1="508" X2="636" Y2="508"/>
+        <dgm:gSegment X1="454" Y1="348" X2="478" Y2="348"/>
+        <dgm:gSegment X1="478" Y1="348" X2="478" Y2="508"/>
+        <dgm:gSegment X1="478" Y1="508" X2="590" Y2="508"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

@@ -7,8 +7,6 @@
          <alias>PRONIA3_CALC_STATUS</alias>
          <primary-key>
             <field table="PRONIA3_CALC_STATUS" name="ID" xsi:type="column"/>
-            <field table="PRONIA3_CALC_STATUS" name="ETL_START_DATE" xsi:type="column"/>
-            <field table="PRONIA3_CALC_STATUS" name="STATUS" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>

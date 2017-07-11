@@ -11,7 +11,7 @@
       <partnerlink name="EBSSendMailNotification" x="851" y="1112" side="right"/>
       <partnerlink name="PNCALCInterface" x="851" y="502" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,837,264" show_swimlanes="true">
+   <graph_layout viewport="0,0,920,331" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence" type="sequence"/>

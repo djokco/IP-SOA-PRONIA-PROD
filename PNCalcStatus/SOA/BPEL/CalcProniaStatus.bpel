@@ -9,11 +9,12 @@
   Purpose: Empty BPEL Process
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
-<process name="CalcProniaStatus" targetNamespace="http://xmlns.oracle.com/IPApplication/PNCalcStatus/CalcProniaStatus"
-         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-         xmlns:client="http://xmlns.oracle.com/IPApplication/PNCalcStatus/CalcProniaStatus"
-         xmlns:ora="http://schemas.oracle.com/xpath/extension"
-         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+<process name="CalcProniaStatus"
+               targetNamespace="http://xmlns.oracle.com/IPApplication/PNCalcStatus/CalcProniaStatus"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/IPApplication/PNCalcStatus/CalcProniaStatus"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/dbCalcStatus"
          xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -39,6 +40,7 @@
          xmlns:ns12="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbUpdateCalcStatus"
          xmlns:ns13="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/UpdateStatusDb"
          xmlns:ns14="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/updateStatusdbFail">
+
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      ORCHESTRATION LOGIC                                               
@@ -46,14 +48,12 @@
      services integrated within this business process                  
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
-  
   <import namespace="http://soa.indonesiapower.co.id/schema/fault" location="../Schemas/fault.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://soa.indonesiapower.co.id/schema/calcproniastatus" location="../Schemas/calcproniastatus.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/IPApplication/PNCalcStatus/dbCalcStatus"
-          location="../WSDLs/dbCalcStatus.wsdl" importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>        
-  
+          location="../WSDLs/dbCalcStatus.wsdl" importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="dbCalcStatus" partnerLinkType="ns1:dbCalcStatus_plt" myRole="dbCalcStatus_role"/>
     <partnerLink name="OracleBI_PNCALCInterfaceStatus" partnerLinkType="ns2:OracleBI_PNCALCInterfaceStatus"
@@ -136,9 +136,9 @@
                   <to variable="InvokeDbStatusUpdateFail_update_InputVariable_1" part="Pronia3CalcStatusCollection"/>
                 </copy>
               </assign>
-              <invoke name="InvokeDbStatusUpdateFail" inputVariable="InvokeDbStatusUpdateFail_update_InputVariable_1"
-                      bpelx:invokeAsDetail="no" partnerLink="updateStatusdbFail" portType="ns14:updateStatusdbFail_ptt"
-                      operation="update"/>
+              <invoke name="InvokeDbStatusUpdateFail"
+                      inputVariable="InvokeDbStatusUpdateFail_update_InputVariable_1" bpelx:invokeAsDetail="no"
+                      partnerLink="updateStatusdbFail" portType="ns14:updateStatusdbFail_ptt" operation="update"/>
             </sequence>
             <sequence name="Sequence6">
               <assign name="Assign_EBSSendMailNotification">
@@ -152,24 +152,24 @@
                       inputVariable="Invoke_EBSSendMailNotification_execute_InputVariable"
                       outputVariable="Invoke_EBSSendMailNotification_execute_OutputVariable"/>
             </sequence>
-            <sequence name="Sequence7">
-              <assign name="Assign_EBSLogFileUtility" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-                <copy>
-                  <from>$ServiceName</from>
-                  <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:serviceName</to>
-                </copy>
-                <copy>
-                  <from>concat('IP-MW-SOA',' || ',ora:getFlowId(),' || ','Start Process ',$ServiceName,' --&gt; Request Payload = ',normalize-space(ora:toCDATA($InputVariable.Pronia3CalcStatusCollection)),' || ', 'Request ',$ServiceName,': ','Payload = ',normalize-space(ora:toCDATA($InvokePNCalcMaximo_SyncPNCALC_InputVariable.parameters)),' || ','Response ',$ServiceName,': ','Payload = ',normalize-space(ora:toCDATA($InvokePNCalcMaximo_SyncPNCALC_OutputVariable.parameters)),' || ','End Process ',$ServiceName,'. Total time executed ',round((xp20:seconds-from-dateTime((xp20:current-dateTime()))-xp20:seconds-from-dateTime($StartDateTime))*1000),' millis.')</from>
-                  <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:message</to>
-                </copy>
-                <copy>
-                  <from>'ERROR'</from>
-                  <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:level</to>
-                </copy>
-              </assign>
-              <invoke name="Invoke_EBSLogFileUtility" partnerLink="EBSLogFileUtility" portType="ns4:writeLog_ptt"
-                      operation="writeLog" inputVariable="Invoke_EBSLogFileUtility_writeLog_InputVariable"
-                      bpelx:invokeAsDetail="no" outputVariable="Invoke_EBSLogFileUtility_writeLog_OutputVariable"/>
+            <sequence name="Sequence7"><assign name="Assign_EBSLogFileUtility"
+                                                                       xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+   <copy>
+         <from>$ServiceName</from>
+         <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:serviceName</to>
+      </copy><copy>
+         <from>concat('IP-MW-SOA',' || ',ora:getFlowId(),' || ','Start Process ',$ServiceName,' --&gt; Request Payload = ',normalize-space(ora:toCDATA($InputVariable.Pronia3CalcStatusCollection)),' || ', 'Request ',$ServiceName,': ','Payload = ',normalize-space(ora:toCDATA($InvokePNCalcMaximo_SyncPNCALC_InputVariable.parameters)),' || ','Response ',$ServiceName,': ','Payload = ',normalize-space(ora:toCDATA($InvokePNCalcMaximo_SyncPNCALC_OutputVariable.parameters)),' || ','End Process ',$ServiceName,'. Total time executed ',round((xp20:seconds-from-dateTime((xp20:current-dateTime()))-xp20:seconds-from-dateTime($StartDateTime))*1000),' millis.')</from>
+         <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:message</to>
+      </copy><copy>
+         <from>'ERROR'</from>
+         <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:level</to>
+      </copy></assign><invoke name="Invoke_EBSLogFileUtility" partnerLink="EBSLogFileUtility"
+                      portType="ns4:writeLog_ptt" operation="writeLog"
+                      inputVariable="Invoke_EBSLogFileUtility_writeLog_InputVariable" bpelx:invokeAsDetail="no"
+                              outputVariable="Invoke_EBSLogFileUtility_writeLog_OutputVariable"/>
             </sequence>
             <exit name="Exit"/>
           </sequence>
@@ -223,9 +223,9 @@
               <to variable="InvokeDbUpdateStatusSuccess_update_InputVariable" part="Pronia3CalcStatusCollection"/>
             </copy>
           </assign>
-          <invoke name="InvokeDbUpdateStatusSuccess" partnerLink="UpdateStatusDb" portType="ns13:UpdateStatusDb_ptt"
-                  operation="update" inputVariable="InvokeDbUpdateStatusSuccess_update_InputVariable"
-                  bpelx:invokeAsDetail="no"/>
+          <invoke name="InvokeDbUpdateStatusSuccess" partnerLink="UpdateStatusDb"
+                  portType="ns13:UpdateStatusDb_ptt" operation="update"
+                  inputVariable="InvokeDbUpdateStatusSuccess_update_InputVariable" bpelx:invokeAsDetail="no"/>
         </sequence>
         <sequence name="UpdateStatus_Success">
           <bpelx:skipCondition>true()</bpelx:skipCondition>
@@ -260,8 +260,9 @@
               <to>$Invoke_EBSLogFileUtility_writeLog_InputVariable.input_msg/ns8:level</to>
             </copy>
           </assign>
-          <invoke name="Invoke_EBSLogFileUtility" partnerLink="EBSLogFileUtility" portType="ns4:writeLog_ptt"
-                  operation="writeLog" inputVariable="Invoke_EBSLogFileUtility_writeLog_InputVariable"
+          <invoke name="Invoke_EBSLogFileUtility" partnerLink="EBSLogFileUtility"
+                  portType="ns4:writeLog_ptt" operation="writeLog"
+                  inputVariable="Invoke_EBSLogFileUtility_writeLog_InputVariable"
                   outputVariable="Invoke_EBSLogFileUtility_writeLog_OutputVariable" bpelx:invokeAsDetail="no"/>
         </sequence>
       </sequence>
